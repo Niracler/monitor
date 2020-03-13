@@ -24,6 +24,8 @@ func MapRoutes() *gin.Engine {
 	apiv1.POST("/game", v1.AddGame)
 	apiv1.PUT("/game/:id", v1.EditGame)
 	apiv1.DELETE("/game/:id", v1.DeleteGame)
+	apiv1.GET("/uo", v1.GetUserOperation)
+	apiv1.GET("/vc", v1.GetVisitCount)
 
 	return ret
 }

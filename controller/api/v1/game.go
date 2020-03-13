@@ -12,7 +12,8 @@ import (
 
 func GetGames(c *gin.Context) {
 	page, _ := com.StrTo(c.DefaultQuery("p", "1")).Int()
-	pageSize, _ := com.StrTo(c.DefaultQuery("page_size", "16")).Int()
+	pageSize, _ := com.StrTo(c.DefaultQuery("ps", "16")).Int()
+	page = (page - 1) * pageSize
 	maps := make(map[string]interface{})
 	count, games := service.GetGames(page, pageSize, maps)
 
